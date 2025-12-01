@@ -1,0 +1,29 @@
+AddOptionMenu "OptionsMenu"
+{
+    Submenu "Directional Motion Blur", "CynicBlurOpts"
+}
+
+OptionValue "CynicBlurPresets"
+{
+    0, "Light"
+    1, "Balanced"
+    2, "Quality"
+    3, "Extreme"
+    4, "Insane"
+    5, "Custom"
+}
+
+OptionMenu "CynicBlurOpts"
+{
+    Position -15
+    Title "Directional Motion Blur"
+    Option "Enabled", "cynic_blur_enabled", YesNo
+    statictext ""
+    Option "Preset", "cynic_blur_preset", "CynicBlurPresets"
+    Command "Save Current as Custom", "cynic_blur_savecustom_trigger 1"
+    statictext ""
+    Slider "Blur Strength", "cynic_blur_strength", 0.0, 1.0, 0.05, 2
+    Slider "Samples", "cynic_blur_samples", 4, 16, 1, 0
+    Slider "Velocity Scale", "cynic_blur_velocity_scale", 0.1, 5.0, 0.1, 1
+    Option "Chromatic Aberration", "cynic_blur_chromatic", YesNo
+}

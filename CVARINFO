@@ -1,0 +1,18 @@
+user bool cynic_blur_enabled = true;
+
+user float cynic_blur_strength = 0.7;
+
+user int cynic_blur_samples = 10;
+
+user float cynic_blur_velocity_scale = 1.2;
+
+user bool cynic_blur_chromatic = true;
+
+user int cynic_blur_preset = 1;
+
+user int cynic_blur_custom_samples = 8;
+user float cynic_blur_custom_strength = 0.5;
+user float cynic_blur_custom_velocity_scale = 1.0;
+user bool cynic_blur_custom_chromatic = true;
+
+user int cynic_blur_savecustom_trigger = 0;

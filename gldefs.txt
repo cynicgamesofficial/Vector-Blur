@@ -1,0 +1,11 @@
+HardwareShader PostProcess beforebloom
+{
+    Name "directionalblur"
+    Shader "shaders/glsl/motionblur.fp" 330
+    
+    Uniform vec2 ViewVelocity
+    Uniform float u_blurStrength
+    Uniform int u_samples
+    Uniform float u_velocityScale
+    Uniform int u_chromaticAberration
+}
