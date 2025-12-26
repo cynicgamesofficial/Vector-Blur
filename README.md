@@ -1,6 +1,5 @@
 # Cynic Games Vector Blur v1.2
 
-Motion blur effect for GZDoom,LZDoom,UZDoom that actually works. Uses proper velocity tracking so it only blurs when you're actually moving, not when you're just pressing keys against a wall.
 
 ## Installation
 
@@ -88,6 +87,7 @@ That's pretty much it. The shader does the visual work, the ZScript handles trac
 This version fixes the wall-stuck blur bug. Now it checks if you're actually moving before applying blur, not just if you're pressing movement keys. The velocity tracking is position-based so it knows the difference between trying to move and actually moving.
 
 If you run into issues or have suggestions, feel free to let me know. Enjoy the blur!
+
 
 
 
