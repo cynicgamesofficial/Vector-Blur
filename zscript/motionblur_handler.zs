@@ -221,21 +221,14 @@ class CynicMotionBlurHandler : StaticEventHandler
         double amount_walk = blurStrength * 1.0 * velocityScale;
         double amount_jump = blurStrength * 1.0 * velocityScale;
         
-        xtravel = xtravel * 0.85 + yaw * amount * 0.625;
-        ytravel = ytravel * 0.85 + pitch * amount;
-        
-        double forwardMove = plr.cmd.forwardmove;
-        double sideMove = plr.cmd.sidemove;
-        
-        if (abs(forwardMove) > 0 || abs(sideMove) > 0)
-        {
-            xtravel += sideMove * amount_walk * 0.01 * 0.625;
-            ytravel += forwardMove * amount_walk * 0.01;
-        }
-        
         double velLength = mo.vel.x * mo.vel.x + mo.vel.y * mo.vel.y;
-        if (velLength > 0)
+        double minMovementSpeed = 0.001;
+        
+        if (velLength > minMovementSpeed * minMovementSpeed)
         {
+            xtravel = xtravel * 0.85 + yaw * amount * 0.625;
+            ytravel = ytravel * 0.85 + pitch * amount;
+            
             double invLength = 1.0 / sqrt(velLength);
             double dirX = mo.vel.x * invLength;
             double dirY = mo.vel.y * invLength;
@@ -247,6 +240,11 @@ class CynicMotionBlurHandler : StaticEventHandler
             
             xtravel += sidevel * amount_walk * 0.625;
             ytravel += mo.vel.z * amount_jump + walkvel * amount_walk;
+        }
+        else
+        {
+            xtravel = xtravel * 0.85;
+            ytravel = ytravel * 0.85;
         }
         
         if (xtravel > 1000.0) xtravel = 1000.0;
