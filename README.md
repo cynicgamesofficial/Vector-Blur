@@ -64,8 +64,6 @@ On faster systems you can crank samples up to 14-16 for really smooth blur, but 
 - Reduce velocity_scale to 0.8-1.0
 - Turn off chromatic if it's distracting
 
-**Getting stuck on walls triggers blur?**
-Shouldn't happen anymore in v1.1 - fixed that issue where pressing keys while stuck would still blur. If it does, let me know.
 
 ## File Structure
 
@@ -87,6 +85,7 @@ That's pretty much it. The shader does the visual work, the ZScript handles trac
 This version fixes the wall-stuck blur bug. Now it checks if you're actually moving before applying blur, not just if you're pressing movement keys. The velocity tracking is position-based so it knows the difference between trying to move and actually moving.
 
 If you run into issues or have suggestions, feel free to let me know. Enjoy the blur!
+
 
 
 
